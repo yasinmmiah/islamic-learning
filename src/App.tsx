@@ -22,38 +22,41 @@ import ShapeDetailPage from './pages/ShapeDetailPage';
 import Layout from './components/Layout';
 import { ProgressProvider } from './context/ProgressContext';
 import { AudioProvider } from './context/AudioContext';
+import { UserProvider } from './context/UserContext';
 
 function App() {
   return (
     <Router>
-      <AudioProvider>
-        <ProgressProvider>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/arabic" element={<ArabicAlphabetPage />} />
-              <Route path="/arabic/:id" element={<LetterDetailPage type="arabic" />} />
-              <Route path="/english" element={<EnglishAlphabetPage />} />
-              <Route path="/english/:id" element={<LetterDetailPage type="english" />} />
-              <Route path="/numbers" element={<NumbersPage />} />
-              <Route path="/numbers/:id" element={<NumberDetailPage />} />
-              <Route path="/colors" element={<ColorsPage />} />
-              <Route path="/colors/:id" element={<ColorDetailPage />} />
-              <Route path="/shapes" element={<ShapesPage />} />
-              <Route path="/shapes/:id" element={<ShapeDetailPage />} />
-              <Route path="/duas" element={<DuasPage />} />
-              <Route path="/duas/:id" element={<DuaDetailPage />} />
-              <Route path="/salah" element={<SalahGuidePage />} />
-              <Route path="/prophets" element={<ProphetStoriesPage />} />
-              <Route path="/prophets/:id" element={<StoryDetailPage />} />
-              <Route path="/names" element={<AllahNamesPage />} />
-              <Route path="/names/:id" element={<NameDetailPage />} />
-              <Route path="/games" element={<GamesPage />} />
-            </Routes>
-          </Layout>
-          <Toaster position="top-right" />
-        </ProgressProvider>
-      </AudioProvider>
+      <UserProvider>
+        <AudioProvider>
+          <ProgressProvider>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/arabic" element={<ArabicAlphabetPage />} />
+                <Route path="/arabic/:id" element={<LetterDetailPage type="arabic" />} />
+                <Route path="/english" element={<EnglishAlphabetPage />} />
+                <Route path="/english/:id" element={<LetterDetailPage type="english" />} />
+                <Route path="/numbers" element={<NumbersPage />} />
+                <Route path="/numbers/:id" element={<NumberDetailPage />} />
+                <Route path="/colors" element={<ColorsPage />} />
+                <Route path="/colors/:id" element={<ColorDetailPage />} />
+                <Route path="/shapes" element={<ShapesPage />} />
+                <Route path="/shapes/:id" element={<ShapeDetailPage />} />
+                <Route path="/duas" element={<DuasPage />} />
+                <Route path="/duas/:id" element={<DuaDetailPage />} />
+                <Route path="/salah" element={<SalahGuidePage />} />
+                <Route path="/prophets" element={<ProphetStoriesPage />} />
+                <Route path="/prophets/:id" element={<StoryDetailPage />} />
+                <Route path="/names" element={<AllahNamesPage />} />
+                <Route path="/names/:id" element={<NameDetailPage />} />
+                <Route path="/games" element={<GamesPage />} />
+              </Routes>
+            </Layout>
+            <Toaster position="top-right" />
+          </ProgressProvider>
+        </AudioProvider>
+      </UserProvider>
     </Router>
   );
 }
