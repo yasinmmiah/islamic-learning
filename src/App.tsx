@@ -20,6 +20,13 @@ import Layout from './components/Layout';
 import { ProgressProvider } from './context/ProgressContext';
 import { AudioProvider } from './context/AudioContext';
 import { UserProvider } from './context/UserContext';
+import LoginPage from './pages/LoginPage';
+import AboutPage from './pages/AboutPage';
+import DevelopersPage from './pages/DevelopersPage';
+import ShapesPage from './pages/ShapesPage';
+import ShapeDetailPage from './pages/ShapeDetailPage';
+import AnimalsPage from './pages/AnimalsPage';
+import AnimalDetailPage from './pages/AnimalDetailPage';
 
 function App() {
   return (
@@ -30,6 +37,9 @@ function App() {
             <Layout>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/developers" element={<DevelopersPage />} />
                 <Route path="/arabic" element={<ArabicAlphabetPage />} />
                 <Route path="/arabic/:id" element={<LetterDetailPage type="arabic" />} />
                 <Route path="/english" element={<EnglishAlphabetPage />} />
@@ -38,6 +48,10 @@ function App() {
                 <Route path="/numbers/:id" element={<NumberDetailPage />} />
                 <Route path="/colors" element={<ColorsPage />} />
                 <Route path="/colors/:id" element={<ColorDetailPage />} />
+                <Route path="/shapes" element={<ShapesPage />} />
+                <Route path="/shapes/:id" element={<ShapeDetailPage />} />
+                <Route path="/animals" element={<AnimalsPage />} />
+                <Route path="/animals/:id" element={<AnimalDetailPage />} />
                 <Route path="/duas" element={<DuasPage />} />
                 <Route path="/duas/:id" element={<DuaDetailPage />} />
                 <Route path="/salah" element={<SalahGuidePage />} />
