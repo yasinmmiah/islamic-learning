@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Home, Book, AlignJustify, Volume2, VolumeX, Menu, X } from 'lucide-react';
+import { Home, Book, AlignJustify, Volume2, VolumeX, Menu, X, Facebook } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
 
 interface LayoutProps {
@@ -36,6 +36,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         <div className="flex items-center gap-2">
+          <a 
+            href="https://www.facebook.com/ymmiah"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            aria-label="Facebook"
+          >
+            <Facebook size={24} />
+          </a>
+
           <button 
             onClick={toggleMute}
             className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
