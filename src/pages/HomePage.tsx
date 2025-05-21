@@ -1,4 +1,3 @@
-```typescript
 import React from 'react';
 import { Book, Languages, Calculator, BookOpen, Puzzle, Moon, Palette, Heart, Square, Cat } from 'lucide-react';
 import CategoryCard from '../components/CategoryCard';
@@ -105,4 +104,3 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-```
