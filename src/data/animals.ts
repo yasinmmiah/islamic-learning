@@ -274,3 +274,5 @@ export const animals: Animal[] = [
     audio: "/audio/ant.mp3"
   }
 ];
+
+export { animals }
