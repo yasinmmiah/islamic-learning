@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import HomePage from './pages/HomePage';
 import ArabicAlphabetPage from './pages/ArabicAlphabetPage';
 import EnglishAlphabetPage from './pages/EnglishAlphabetPage';
@@ -17,16 +16,12 @@ import ColorsPage from './pages/ColorsPage';
 import ColorDetailPage from './pages/ColorDetailPage';
 import AllahNamesPage from './pages/AllahNamesPage';
 import NameDetailPage from './pages/NameDetailPage';
-import ShapesPage from './pages/ShapesPage';
-import ShapeDetailPage from './pages/ShapeDetailPage';
-import AnimalsPage from './pages/AnimalsPage';
-import AnimalDetailPage from './pages/AnimalDetailPage';
 import Layout from './components/Layout';
 import { ProgressProvider } from './context/ProgressContext';
 import { AudioProvider } from './context/AudioContext';
 import { UserProvider } from './context/UserContext';
 
-export default function App() {
+function App() {
   return (
     <Router>
       <UserProvider>
@@ -43,10 +38,6 @@ export default function App() {
                 <Route path="/numbers/:id" element={<NumberDetailPage />} />
                 <Route path="/colors" element={<ColorsPage />} />
                 <Route path="/colors/:id" element={<ColorDetailPage />} />
-                <Route path="/shapes" element={<ShapesPage />} />
-                <Route path="/shapes/:id" element={<ShapeDetailPage />} />
-                <Route path="/animals" element={<AnimalsPage />} />
-                <Route path="/animals/:id" element={<AnimalDetailPage />} />
                 <Route path="/duas" element={<DuasPage />} />
                 <Route path="/duas/:id" element={<DuaDetailPage />} />
                 <Route path="/salah" element={<SalahGuidePage />} />
@@ -57,10 +48,11 @@ export default function App() {
                 <Route path="/games" element={<GamesPage />} />
               </Routes>
             </Layout>
-            <Toaster position="top-right" />
           </ProgressProvider>
         </AudioProvider>
       </UserProvider>
     </Router>
   );
 }
+
+export default App;
