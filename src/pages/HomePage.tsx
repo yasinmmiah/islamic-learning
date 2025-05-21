@@ -1,5 +1,5 @@
 import React from 'react';
-import { Book, Languages, Calculator, BookOpen, Puzzle, Moon, Palette, Heart } from 'lucide-react';
+import { Book, Languages, Calculator, BookOpen, Puzzle, Moon, Palette, Heart, Square } from 'lucide-react';
 import CategoryCard from '../components/CategoryCard';
 
 const HomePage: React.FC = () => {
@@ -31,6 +31,13 @@ const HomePage: React.FC = () => {
       color: "var(--accent-dark)",
       path: "/colors",
       description: "Learn colors in Arabic"
+    },
+    {
+      title: "Shapes",
+      icon: <Square size={32} className="text-[var(--secondary)]" />,
+      color: "var(--secondary)",
+      path: "/shapes",
+      description: "Learn shapes in Arabic"
     },
     {
       title: "Allah's Names",
