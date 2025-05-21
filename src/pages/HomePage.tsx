@@ -1,5 +1,6 @@
+```typescript
 import React from 'react';
-import { Book, Languages, Calculator, BookOpen, Puzzle, Moon, Palette, Heart, Square } from 'lucide-react';
+import { Book, Languages, Calculator, BookOpen, Puzzle, Moon, Palette, Heart, Square, Cat } from 'lucide-react';
 import CategoryCard from '../components/CategoryCard';
 
 const HomePage: React.FC = () => {
@@ -38,6 +39,13 @@ const HomePage: React.FC = () => {
       color: "var(--secondary)",
       path: "/shapes",
       description: "Learn shapes in Arabic"
+    },
+    {
+      title: "Animals",
+      icon: <Cat size={32} className="text-[var(--primary)]" />,
+      color: "var(--primary)",
+      path: "/animals",
+      description: "Learn animal names in Arabic"
     },
     {
       title: "Allah's Names",
@@ -97,3 +105,4 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+```

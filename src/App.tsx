@@ -1,3 +1,4 @@
+```typescript
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -19,6 +20,8 @@ import AllahNamesPage from './pages/AllahNamesPage';
 import NameDetailPage from './pages/NameDetailPage';
 import ShapesPage from './pages/ShapesPage';
 import ShapeDetailPage from './pages/ShapeDetailPage';
+import AnimalsPage from './pages/AnimalsPage';
+import AnimalDetailPage from './pages/AnimalDetailPage';
 import Layout from './components/Layout';
 import { ProgressProvider } from './context/ProgressContext';
 import { AudioProvider } from './context/AudioContext';
@@ -43,6 +46,8 @@ function App() {
                 <Route path="/colors/:id" element={<ColorDetailPage />} />
                 <Route path="/shapes" element={<ShapesPage />} />
                 <Route path="/shapes/:id" element={<ShapeDetailPage />} />
+                <Route path="/animals" element={<AnimalsPage />} />
+                <Route path="/animals/:id" element={<AnimalDetailPage />} />
                 <Route path="/duas" element={<DuasPage />} />
                 <Route path="/duas/:id" element={<DuaDetailPage />} />
                 <Route path="/salah" element={<SalahGuidePage />} />
@@ -62,3 +67,4 @@ function App() {
 }
 
 export default App;
+```
