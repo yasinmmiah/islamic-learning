@@ -35,7 +35,7 @@ const DevelopersPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <a
-              href="https://github.com/noorkids/islamic-learning"
+              href="https://github.com/yasinmmiah/islamic-learning"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 p-4 bg-[var(--neutral-800)] text-white rounded-lg hover:bg-[var(--neutral-900)] transition-colors"
@@ -71,7 +71,7 @@ const DevelopersPage: React.FC = () => {
               <h3 className="text-xl font-bold mb-2">Getting Started</h3>
               <div className="bg-[var(--neutral-800)] text-white p-4 rounded-lg overflow-x-auto">
                 <pre className="text-sm">
-                  <code>{`git clone https://github.com/noorkids/islamic-learning.git
+                  <code>{`git clone https://github.com/yasinmmiah/islamic-learning.git
 cd islamic-learning
 npm install
 npm run dev`}</code>
