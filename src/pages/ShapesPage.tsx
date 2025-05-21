@@ -35,6 +35,7 @@ const ShapesPage: React.FC = () => {
             arabicName={shape.arabicName}
             transliteration={shape.transliteration}
             sides={shape.sides}
+            image={shape.image}
           />
         ))}
       </div>

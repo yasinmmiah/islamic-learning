@@ -9,6 +9,7 @@ interface ShapeCardProps {
   arabicName: string;
   transliteration: string;
   sides: number;
+  image: string;
 }
 
 const ShapeCard: React.FC<ShapeCardProps> = ({
@@ -16,7 +17,8 @@ const ShapeCard: React.FC<ShapeCardProps> = ({
   name,
   arabicName,
   transliteration,
-  sides
+  sides,
+  image
 }) => {
   const navigate = useNavigate();
   const { getProgress } = useProgress();
@@ -35,14 +37,19 @@ const ShapeCard: React.FC<ShapeCardProps> = ({
         <Star fill="var(--warning)" />
       </div>
       <div className="p-4 flex flex-col items-center justify-center">
-        <div className="w-16 h-16 bg-[var(--secondary)]10 rounded-full flex items-center justify-center mb-3">
-          <span className="text-[var(--secondary)] text-lg font-bold">
-            {sides > 0 ? sides : '∞'}
-          </span>
+        <div className="w-32 h-32 mb-3 rounded-lg overflow-hidden">
+          <img 
+            src={image} 
+            alt={name}
+            className="w-full h-full object-cover"
+          />
         </div>
         <h3 className="font-bold mb-1">{name}</h3>
         <p className="text-lg mb-1 rtl">{arabicName}</p>
         <p className="text-sm text-[var(--neutral-600)]">{transliteration}</p>
+        <p className="text-xs text-[var(--neutral-500)] mt-1">
+          {sides > 0 ? `${sides} sides` : 'No sides'}
+        </p>
       </div>
       {progress > 0 && progress < 100 && (
         <div className="progress-bar m-2">
