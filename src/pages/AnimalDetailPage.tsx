@@ -1,4 +1,3 @@
-```typescript
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Volume2 } from 'lucide-react';
@@ -12,7 +11,7 @@ const AnimalDetailPage: React.FC = () => {
   const { updateProgress, completeActivity } = useProgress();
   
   const animal = animals.find(a => a.id === id);
-  const progressId = `animal-${id}`;
+  const progressId = 'animal-' + id;
   
   useEffect(() => {
     if (animal) {
@@ -130,4 +129,3 @@ const AnimalDetailPage: React.FC = () => {
 };
 
 export default AnimalDetailPage;
-```

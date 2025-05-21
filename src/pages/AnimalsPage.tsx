@@ -1,4 +1,3 @@
-```typescript
 import React, { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -47,11 +46,11 @@ const AnimalsPage: React.FC = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-full whitespace-nowrap ${
-                selectedCategory === category.id
+              className={'px-4 py-2 rounded-full whitespace-nowrap ' + 
+                (selectedCategory === category.id
                   ? 'bg-[var(--primary)] text-white'
-                  : 'bg-[var(--neutral-200)] text-[var(--neutral-700)] hover:bg-[var(--neutral-300)]'
-              }`}
+                  : 'bg-[var(--neutral-200)] text-[var(--neutral-700)] hover:bg-[var(--neutral-300)]')
+              }
             >
               {category.name}
             </button>
@@ -77,4 +76,3 @@ const AnimalsPage: React.FC = () => {
 };
 
 export default AnimalsPage;
-```
