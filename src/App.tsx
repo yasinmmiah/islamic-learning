@@ -1,4 +1,3 @@
-```typescript
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -27,7 +26,7 @@ import { ProgressProvider } from './context/ProgressContext';
 import { AudioProvider } from './context/AudioContext';
 import { UserProvider } from './context/UserContext';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <UserProvider>
@@ -65,6 +64,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
-```
