@@ -7,21 +7,25 @@ import toast from 'react-hot-toast';
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSignUp, setIsSignUp] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { signIn } = useUser();
+  const { signIn, signUp } = useUser();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await signIn(email, password);
-      toast.success('Signed in successfully');
+      if (isSignUp) {
+        await signUp(email, password);
+      } else {
+        await signIn(email, password);
+      }
       navigate('/');
     } catch (error: any) {
-      console.error('Login error:', error);
-      toast.error('Invalid email or password');
+      console.error('Auth error:', error);
+      toast.error(error.message || 'An error occurred');
     } finally {
       setLoading(false);
     }
@@ -36,7 +40,9 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
+        <h1 className="text-2xl font-bold text-center mb-6">
+          {isSignUp ? 'Create Account' : 'Sign In'}
+        </h1>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -64,6 +70,7 @@ const LoginPage: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
               required
+              minLength={6}
             />
           </div>
 
@@ -74,8 +81,18 @@ const LoginPage: React.FC = () => {
               loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[var(--primary-dark)]'
             }`}
           >
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? 'Please wait...' : (isSignUp ? 'Create Account' : 'Sign In')}
           </button>
+
+          <div className="mt-4 text-center">
+            <button
+              type="button"
+              onClick={() => setIsSignUp(!isSignUp)}
+              className="text-[var(--primary)] hover:underline"
+            >
+              {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+            </button>
+          </div>
         </form>
       </div>
     </div>
