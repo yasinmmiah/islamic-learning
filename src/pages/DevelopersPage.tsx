@@ -98,7 +98,7 @@ npm run dev`}</code>
 
           <div className="flex justify-center">
             <a
-              href="mailto:api@noorkids.com"
+              href="mailto:yasin@iqrahost.com"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary-dark)] transition-colors"
             >
               <ExternalLink size={20} />
