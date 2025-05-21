@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { AudioService } from '../services/audioService';
 
 interface AudioContextType {
   isMuted: boolean;
@@ -16,12 +17,17 @@ export const AudioProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     const savedMuteState = localStorage.getItem('noorKidsMuted');
     if (savedMuteState !== null) {
       setIsMuted(savedMuteState === 'true');
+      AudioService.setMute(savedMuteState === 'true');
     }
+    
+    // Initialize audio service
+    AudioService.init();
   }, []);
 
   // Save mute preference to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('noorKidsMuted', String(isMuted));
+    AudioService.setMute(isMuted);
   }, [isMuted]);
 
   const toggleMute = () => {
@@ -31,14 +37,14 @@ export const AudioProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const playSound = (src: string) => {
     if (isMuted) return;
     
-    // In a real app, we would use an actual audio file
-    try {
-      const audio = new Audio(src);
-      audio.play().catch(error => {
-        console.error('Error playing audio:', error);
-      });
-    } catch (error) {
-      console.error('Error creating audio:', error);
+    if (src.startsWith('http')) {
+      AudioService.playFromUrl(src);
+    } else {
+      // Extract sound ID from path
+      const id = src.split('/').pop()?.split('.')[0];
+      if (id) {
+        AudioService.play(id);
+      }
     }
   };
 
