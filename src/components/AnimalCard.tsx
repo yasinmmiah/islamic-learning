@@ -1,4 +1,3 @@
-```typescript
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star } from 'lucide-react';
@@ -65,4 +64,3 @@ const AnimalCard: React.FC<AnimalCardProps> = ({
 };
 
 export default AnimalCard;
-```
