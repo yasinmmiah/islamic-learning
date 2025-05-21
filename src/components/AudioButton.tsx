@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Volume, Loader } from 'lucide-react';
 import { useAudio } from '../context/AudioContext';
+import { AudioService } from '../services/audioService';
 
 interface AudioButtonProps {
   src: string;
@@ -17,7 +18,7 @@ const AudioButton: React.FC<AudioButtonProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { isMuted, playSound } = useAudio();
+  const { isMuted } = useAudio();
 
   const sizeMap = {
     sm: {
@@ -43,9 +44,17 @@ const AudioButton: React.FC<AudioButtonProps> = ({
     try {
       setIsLoading(true);
       setIsPlaying(true);
-      
-      playSound(src);
-      
+
+      // Extract sound ID from path or use full URL
+      if (src.startsWith('http')) {
+        await AudioService.playFromUrl(src);
+      } else {
+        const id = src.split('/').pop()?.split('.')[0];
+        if (id) {
+          await AudioService.play(id);
+        }
+      }
+
       // Reset state after a delay
       setTimeout(() => {
         setIsPlaying(false);

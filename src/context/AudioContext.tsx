@@ -34,17 +34,21 @@ export const AudioProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     setIsMuted(prev => !prev);
   };
 
-  const playSound = (src: string) => {
+  const playSound = async (src: string) => {
     if (isMuted) return;
     
-    if (src.startsWith('http')) {
-      AudioService.playFromUrl(src);
-    } else {
-      // Extract sound ID from path
-      const id = src.split('/').pop()?.split('.')[0];
-      if (id) {
-        AudioService.play(id);
+    try {
+      if (src.startsWith('http')) {
+        await AudioService.playFromUrl(src);
+      } else {
+        // Extract sound ID from path
+        const id = src.split('/').pop()?.split('.')[0];
+        if (id) {
+          await AudioService.play(id);
+        }
       }
+    } catch (error) {
+      console.error('Error playing sound:', error);
     }
   };
 
