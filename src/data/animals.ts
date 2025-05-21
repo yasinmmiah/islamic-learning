@@ -1,4 +1,3 @@
-```typescript
 export interface Animal {
   id: string;
   name: string;
@@ -110,4 +109,3 @@ export const animals: Animal[] = [
     audio: "/audio/horse.mp3"
   }
 ];
-```
