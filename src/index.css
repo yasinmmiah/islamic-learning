@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap');
+
+:root {
+  --primary: #4CAF50;
+  --primary-light: #81C784;
+  --primary-dark: #388E3C;
+  
+  --secondary: #2196F3;
+  --secondary-light: #64B5F6;
+  --secondary-dark: #1976D2;
+  
+  --accent: #FF9800;
+  --accent-light: #FFB74D;
+  --accent-dark: #F57C00;
+  
+  --purple: #9C27B0;
+  --purple-light: #CE93D8;
+  --purple-dark: #7B1FA2;
+  
+  --success: #4CAF50;
+  --warning: #FFC107;
+  --error: #F44336;
+  
+  --neutral-100: #F5F5F5;
+  --neutral-200: #EEEEEE;
+  --neutral-300: #E0E0E0;
+  --neutral-400: #BDBDBD;
+  --neutral-500: #9E9E9E;
+  --neutral-600: #757575;
+  --neutral-700: #616161;
+  --neutral-800: #424242;
+  --neutral-900: #212121;
+}
+
+body {
+  font-family: 'Baloo 2', sans-serif;
+  @apply bg-neutral-100;
+}
+
+/* Animation for interactive elements */
+.bounce-on-click:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom classes for letter/number cards */
+.card {
+  @apply rounded-xl shadow-lg bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300;
+}
+
+.card-interactive {
+  @apply cursor-pointer transform transition-transform duration-200 hover:scale-105;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-200 ease-in-out;
+}
+
+.btn-secondary {
+  @apply bg-[var(--secondary)] hover:bg-[var(--secondary-dark)] text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-200 ease-in-out;
+}
+
+.btn-accent {
+  @apply bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all duration-200 ease-in-out;
+}
+
+/* Canvas for tracing activities */
+.tracing-canvas {
+  @apply border-2 border-[var(--primary-light)] rounded-lg;
+  touch-action: none;
+}
+
+/* RTL support for Arabic text */
+.rtl {
+  direction: rtl;
+}
+
+/* Progress bar custom styling */
+.progress-bar {
+  @apply h-4 rounded-full bg-[var(--neutral-200)];
+}
+
+.progress-bar-fill {
+  @apply h-full rounded-full bg-[var(--primary)];
+  transition: width 0.3s ease-in-out;
+}
+
+/* Page transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
