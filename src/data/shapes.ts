@@ -24,7 +24,7 @@ export const shapes: Shape[] = [
     transliteration: "da'irah",
     description: "A round shape with no corners or edges",
     sides: 0,
-    image: "https://images.pexels.com/photos/5726832/pexels-photo-5726832.jpeg",
+    image: "https://images.pexels.com/photos/5726832/pexels-photo-5726832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "القمر",
       transliteration: "al-qamar",
@@ -41,7 +41,7 @@ export const shapes: Shape[] = [
     transliteration: "murabba",
     description: "A shape with four equal sides and four right angles",
     sides: 4,
-    image: "https://images.pexels.com/photos/5726833/pexels-photo-5726833.jpeg",
+    image: "https://images.pexels.com/photos/5726833/pexels-photo-5726833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "الكعبة",
       transliteration: "al-ka'bah",
@@ -58,7 +58,7 @@ export const shapes: Shape[] = [
     transliteration: "muthallath",
     description: "A shape with three sides and three angles",
     sides: 3,
-    image: "https://images.pexels.com/photos/5726834/pexels-photo-5726834.jpeg",
+    image: "https://images.pexels.com/photos/5726834/pexels-photo-5726834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "الهرم",
       transliteration: "al-haram",
@@ -75,7 +75,7 @@ export const shapes: Shape[] = [
     transliteration: "mustateel",
     description: "A shape with four sides and four right angles",
     sides: 4,
-    image: "https://images.pexels.com/photos/5726835/pexels-photo-5726835.jpeg",
+    image: "https://images.pexels.com/photos/5726835/pexels-photo-5726835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "الباب",
       transliteration: "al-baab",
@@ -92,7 +92,7 @@ export const shapes: Shape[] = [
     transliteration: "khumaasi",
     description: "A shape with five sides and five angles",
     sides: 5,
-    image: "https://images.pexels.com/photos/5726836/pexels-photo-5726836.jpeg",
+    image: "https://images.pexels.com/photos/5726836/pexels-photo-5726836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "نجمة",
       transliteration: "najmah",
@@ -109,7 +109,7 @@ export const shapes: Shape[] = [
     transliteration: "sudaasi",
     description: "A shape with six sides and six angles",
     sides: 6,
-    image: "https://images.pexels.com/photos/5726837/pexels-photo-5726837.jpeg",
+    image: "https://images.pexels.com/photos/5726837/pexels-photo-5726837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "خلية النحل",
       transliteration: "khaliyyat an-nahl",
@@ -126,7 +126,7 @@ export const shapes: Shape[] = [
     transliteration: "thumaani",
     description: "A shape with eight sides and eight angles",
     sides: 8,
-    image: "https://images.pexels.com/photos/5726838/pexels-photo-5726838.jpeg",
+    image: "https://images.pexels.com/photos/5726838/pexels-photo-5726838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "علامة التوقف",
       transliteration: "alaamat at-tawaqquf",
@@ -143,7 +143,7 @@ export const shapes: Shape[] = [
     transliteration: "najmah",
     description: "A pointed shape with multiple points",
     sides: 5,
-    image: "https://images.pexels.com/photos/5726839/pexels-photo-5726839.jpeg",
+    image: "https://images.pexels.com/photos/5726839/pexels-photo-5726839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "نجوم السماء",
       transliteration: "nujoom as-samaa",
@@ -160,7 +160,7 @@ export const shapes: Shape[] = [
     transliteration: "hilaal",
     description: "A curved shape like the new moon",
     sides: 0,
-    image: "https://images.pexels.com/photos/5726840/pexels-photo-5726840.jpeg",
+    image: "https://images.pexels.com/photos/5726840/pexels-photo-5726840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     example: {
       word: "الهلال",
       transliteration: "al-hilaal",
