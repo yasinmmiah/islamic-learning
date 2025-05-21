@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { LogOut, Settings, Users, Book, Moon, Palette, Heart, Hash } from 'lucide-react';
+import { LogOut, Settings, Users, Book, Moon, Palette, Heart, Hash, Square } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -39,6 +39,11 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       title: "Colors",
       path: "/admin/colors",
       icon: <Palette size={20} />
+    },
+    {
+      title: "Shapes",
+      path: "/admin/shapes",
+      icon: <Square size={20} />
     },
     {
       title: "Allah's Names",
